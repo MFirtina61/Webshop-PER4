@@ -1,9 +1,7 @@
 /* ------------------- */
 /* ----- IMPORTS ----- */
 /* ------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* ------------------ */
 /* ----- BASICS ----- */
@@ -20,7 +18,7 @@ html {
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   overflow-x: hidden;
 }
 
@@ -37,20 +35,69 @@ main {
 }
 
 
+/* ----------------- */
+/* -----BUTTONS----- */
+/* ----------------- */
+
+.button-style1 {
+  background: none;
+  border: black 2px solid;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem;
+  width: 25rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: skew(0);
+  border-radius: 25rem;
+}
+
+.button-style1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  color: #ffffff;
+  z-index: -1;
+  transition: all 0.5s;
+  border-radius: 25rem;
+}
+
+.button-style1:hover span a {
+  color: #ffffff;
+  transition-delay: 100ms;
+}
+
+.button-style1:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.button-style1 span a {
+  color: black;
+}
+
+
+
+
 /* ---------------------- */
 /* ----- TOP HEADER ----- */
 /* ---------------------- */
 
 .top-header {
-  background-color: lightblue;
+  background-color: rgb(255, 255, 255);
 
   text-align: center;
   font-size: 1.5rem;
 
   padding: 0.5rem;
 }
-
-
 
 /* --------------------- */
 /* ----- NAVIGATIE ----- */
@@ -63,7 +110,7 @@ nav {
   justify-content: space-between;
 }
 
-nav>ul {
+nav > ul {
   display: flex;
   flex-direction: row;
   gap: 0 2em;
@@ -72,18 +119,26 @@ nav>ul {
   padding: 4rem 5em;
 }
 
-.item1 > a, .item2 > a, .item3 > a, .hidden:hover {
+nav .logo {
+  width: 5rem;
+}
+
+.item1 > a,
+.item2 > a,
+.item3 > a,
+.hidden:hover {
   padding-bottom: 1.2rem;
   font-weight: 500;
 }
 
-.item1:hover > a, .item2:hover > a, .item3:hover > a {
+.item1:hover > a,
+.item2:hover > a,
+.item3:hover > a {
   border-bottom: 4px black solid;
 }
 
-
-nav>ul>li {
-  padding: 2rem ;
+nav > ul > li {
+  padding: 2rem;
   vertical-align: middle;
 }
 
@@ -92,7 +147,7 @@ nav > ul li:nth-child(1) {
   font-weight: 800;
 }
 
-nav>ul>li a {
+nav > ul > li a {
   color: white;
   font-size: 2rem;
 }
@@ -130,13 +185,34 @@ nav ul li section {
   flex-direction: row;
 }
 
+.search-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+  color: white;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.opengeklapt .search-placeholder {
+  color: black;
+}
+
+.opengeklapt .search-bar::placeholder {
+  color: black;
+  opacity: 1;
+}
+
 .search-main ul {
   display: flex;
   gap: 3rem;
   align-items: center;
 }
 
-.search-container{
+.search-container {
   width: 20rem;
   position: relative;
   top: 1rem;
@@ -147,7 +223,16 @@ nav ul li section {
   color: white;
 }
 
-input#search-bar{
+.search-container input::placeholder {
+  color: white;
+} 
+
+nav.opengeklapt .search-container input#search-bar {
+  border-color: black;
+}
+
+
+input#search-bar {
   margin: 0 auto;
   width: 100%;
   height: 45px;
@@ -158,12 +243,12 @@ input#search-bar{
   border-radius: 20rem;
 }
 
-.search-icon{
+.search-icon {
   position: relative;
   float: right;
   width: 2.4rem;
   top: -3.7rem;
-  right: 2rem;  
+  right: 2rem;
 }
 
 .cart button {
@@ -174,8 +259,6 @@ input#search-bar{
 .cart img {
   width: 2.5rem;
 }
-
-
 
 /* ----------------------------------- */
 /* ----- MEGA MENU - OPENKLAPPEN ----- */
@@ -188,7 +271,6 @@ input#search-bar{
   display: flex;
   z-index: 99;
   border-top: lightslategray 1px solid;
-
 }
 
 nav.opengeklapt {
@@ -202,24 +284,39 @@ nav.opengeklapt ul li a {
 /* --------------------------- */
 /* ----- MEGA MENU STIJL ----- */
 /* --------------------------- */
-nav ul li section>ul {
+nav ul li section > ul {
   padding: 2em 0 0 5em;
 }
 
 .item1 div:nth-child(2) {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.765), rgba(0, 0, 0, 0)), url("../img/bmw-menu.webp");
-
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.765),
+      rgba(0, 0, 0, 0)
+    ),
+    url("../img/bmw-menu.webp");
 }
 
 .item2 div:nth-child(2) {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.765), rgba(0, 0, 0, 0)), url("../img/bmw-menu.webp");}
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.765),
+      rgba(0, 0, 0, 0)
+    ),
+    url("../img/bmw-menu.webp");
+}
 
 .item3 div:nth-child(2) {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.765), rgba(0, 0, 0, 0)), url("../img/bmw-menu.webp");}
-
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.765),
+      rgba(0, 0, 0, 0)
+    ),
+    url("../img/bmw-menu.webp");
+}
 
 /* Blok met linkjes */
-nav ul li section>ul>li {
+nav ul li section > ul > li {
   padding-bottom: 1rem;
 }
 
@@ -235,13 +332,13 @@ nav ul li section ul ul {
   border-top: 3px solid lightgray;
 }
 
-nav ul li section>ul,
-nav ul li section>div {
+nav ul li section > ul,
+nav ul li section > div {
   width: 50%;
   background-color: rgb(255, 255, 255);
 }
 
-nav ul li section>div {
+nav ul li section > div {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -269,16 +366,87 @@ nav ul li section div div p {
   margin-bottom: 2rem;
 }
 
-.menu-button span a {
-  font-size: 1.5rem;
-}
-
 
 /* ---------------- */
 /* ----- MAIN ----- */
 /* ---------------- */
 
 /* Blok 1 */
+
+.popup {
+  position: fixed;
+  width: 20rem;
+  height: 5rem;
+  right: -20rem;
+  top: 50rem;
+  transition: right 0.3s ease;
+  z-index: 99;
+}
+
+.popup.visible {
+  right: 0;
+}
+
+.popup2 {
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.popup2 > div img {
+  width: 2rem;
+}
+
+.popup2 div:nth-child(1) button {
+  transform: rotate(90deg);
+  height: 4rem;
+  width: 20rem;
+  right: 12rem;
+  position: absolute;
+  display: flex;
+  background: #1C69D4;
+  border: none;
+  font-size: 2rem;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset -9px 0px 17px 0px rgba(0,0,0,0.26);
+  color: #ffffff;
+}
+
+.popup2 div:nth-child(1) button img {
+  transform: rotate(90deg);
+  width: 2.5rem;
+  margin-left: 1rem;
+}
+
+.popup2 div:nth-child(2) {
+  background: rgb(255, 213, 88);
+  position: absolute;
+  height: auto;
+  width: 100%;
+  top: -13.8rem;
+  padding: 1rem;
+  box-shadow: 10px -1px 36px -12px rgba(77,77,77,0.68);;
+}
+
+.popup2 div:nth-child(2) > p {
+  margin-bottom: 1rem;
+  width: 110%;
+}
+
+.popup2 div:nth-child(2) div {
+  display: flex;
+  align-items: center;
+}
+
+.popup2 div:nth-child(2) img {
+  width: 2rem;
+  margin-right: 0.5rem;
+}
+
+
+
+
 
 main .uitgelicht {
   background-image: url("../img/bmw-menu-2.jpg");
@@ -290,18 +458,13 @@ main .uitgelicht {
   margin-top: -8rem;
 }
 
-
-
-
-
 /* BUTTON ANIMATION MENU */
 
 .menu-button {
-  background: #fff;
+  background: #ffffff;
   border: none;
   display: inline-block;
-  font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 1rem;
   width: 25rem;
   text-transform: uppercase;
@@ -328,6 +491,7 @@ main .uitgelicht {
 .menu-button:hover span a {
   color: #ffffff;
   transition-delay: 100ms;
+  font-weight: 600;
 }
 
 .menu-button:hover::before {
@@ -338,9 +502,8 @@ main .uitgelicht {
 
 .menu-button span a {
   color: black;
+  font-size: 1.5rem;
 }
-
-
 
 /* ------- UITKLAPPEN --------- */
 
@@ -352,7 +515,7 @@ main .uitgelicht {
 .uitklap-menu:hover {
   opacity: 1;
   visibility: visible;
-  }
+}
 
 .menu .uitklap-menu {
   background-color: rgb(255, 255, 255);
@@ -367,8 +530,6 @@ main .uitgelicht {
   transition: opacity 0.3s ease, visibility 0.3s ease;
   height: 60rem;
 }
-
-
 
 /* ---------- MAIN ----------- */
 
@@ -389,11 +550,9 @@ main .uitgelicht {
   width: 100%;
 }
 
-
 .bmw-info section p:nth-child(1) {
   font-size: 1.5rem;
   color: rgb(112, 112, 112);
-  
 }
 
 .bmw-info section h2 {
@@ -407,54 +566,6 @@ main .uitgelicht {
   font-weight: 300;
   margin-bottom: 4rem;
 }
-
-/* BMW BUTTON */
-
-.bmw-info section button {
-  background: #fff;
-  border: none;
-  display: inline-block;
-  font-size: 1.5rem;
-  font-weight: 600;
-  width: 25rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  transform: skew(0);
-  padding: 1.5rem;
-  border-radius: 20rem;
-  border: black 2px solid;
-}
-
-.bmw-info section button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 100%;
-  left: 0;
-  background: rgb(20, 20, 20);
-  opacity: 0;
-  color: #ffffff;
-  z-index: -1;
-  transition: all 0.5s;
-  border-radius: 20rem;
-}
-
-.bmw-info button:hover span a {
-  color: #ffffff;
-  transition-delay: 100ms;
-}
-
-.bmw-info button:hover::before {
-  left: 0;
-  right: 0;
-  opacity: 1;
-}
-
-.bmw-info button span a {
-  color: black;
-}
-
 
 
 /* ------------ UITGELICHT BMW -------------- */
@@ -471,38 +582,37 @@ main .uitgelicht {
 }
 
 .uitgelicht-bmw section .bmw-autos li {
- width: 100%;
+  width: 100%;
 }
 
 .uitgelicht-bmw section .bmw-autos li img:nth-child(1) {
   width: 100%;
   margin-bottom: -5rem;
- }
+}
 
- .uitgelicht-bmw section .bmw-autos li:hover > img:nth-child(1) {
+.uitgelicht-bmw section .bmw-autos li:hover > img:nth-child(1) {
   transform: scale(1.05);
   transition: all 0.5s;
 }
 
- .uitgelicht-bmw section .bmw-autos li img:nth-child(2) {
+.uitgelicht-bmw section .bmw-autos li img:nth-child(2) {
   width: 5rem;
- }
+}
 
- .uitgelicht-bmw section .bmw-autos li h3 {
+.uitgelicht-bmw section .bmw-autos li h3 {
   font-size: 2rem;
- }
+}
 
- .uitgelicht-bmw section .bmw-autos li h4 {
+.uitgelicht-bmw section .bmw-autos li h4 {
   font-size: 1.2rem;
   font-weight: 500;
- }
+}
 
- .uitgelicht-bmw section .bmw-autos li p {
+.uitgelicht-bmw section .bmw-autos li p {
   font-size: 1.5rem;
   font-weight: 500;
   margin-top: 1rem;
- }
-
+}
 
 /* AUTO INFO */
 
@@ -518,12 +628,12 @@ main .uitgelicht {
   gap: 0.5rem;
   width: 100%;
   animation-name: bmw;
-  animation-duration:1s;
+  animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .auto-info li {
-  background: #F2F2F2;
+  background: #f2f2f2;
   height: 24rem;
   width: 33.33%;
   padding: 2rem;
@@ -532,7 +642,8 @@ main .uitgelicht {
   justify-content: end;
 }
 
-.auto-info li:nth-child(3), .auto-info li:nth-child(4) {
+.auto-info li:nth-child(3),
+.auto-info li:nth-child(4) {
   justify-content: end;
   align-items: center;
 }
@@ -556,6 +667,10 @@ main .uitgelicht {
   margin-bottom: 2rem;
 }
 
+.auto-info li button {
+  width: 100%;
+}
+
 .auto-info li svg {
   margin-bottom: 1rem;
 }
@@ -565,73 +680,21 @@ main .uitgelicht {
   top: -80%;
   left: 27.5%;
   animation-name: bmw;
-  animation-duration:1s;
+  animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 @keyframes bmw {
-  from{
+  from {
     transform: translateY(-10%);
   }
-  to{
-    transform: translateY(0)
+  to {
+    transform: translateY(0);
   }
 }
-
 
 .auto-info-bmw .show {
   display: flex;
-}
-
-
-
-
-/* UITGELICHTE AUTO'S BUTTON */
-
-.auto-info button {
-  background: #fff;
-  border: none;
-  display: inline-block;
-  font-size: 1.5rem;
-  font-weight: 600;
-  width: 100%;
-  padding: 1.5rem;
-  border: black 2px solid;
-  background: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  transform: skew(0);
-  border-radius: 20rem;
-}
-
-.auto-info button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 100%;
-  left: 0;
-  background: rgb(20, 20, 20);
-  opacity: 0;
-  color: #ffffff;
-  z-index: -1;
-  transition: all 0.5s;
-  border-radius: 20rem;
-}
-
-.auto-info button:hover span a {
-  color: #ffffff;
-  transition-delay: 100ms;
-}
-
-.auto-info button:hover::before {
-  left: 0;
-  right: 0;
-  opacity: 1;
-}
-
-.auto-info button span a {
-  color: black;
 }
 
 
@@ -646,6 +709,10 @@ main .uitgelicht {
 .merken p {
   font-size: 1.5rem;
   text-align: center;
+}
+
+.merken button {
+  margin-top: 2rem;
 }
 
 .merken h2:nth-child(2) {
@@ -694,51 +761,310 @@ main .uitgelicht {
 }
 
 
-/* MERKEN BUTTON */
+/* -----UITGELICHTE PRODUCT--------- */
 
-.merken button {
-  margin-top: 3rem;
-  background: #fff;
-  border: none;
-  display: inline-block;
-  font-size: 1.5rem;
-  font-weight: 600;
+.uitgelicht-product {
+  display: flex;
+  width: 100%;
+  padding: 15rem 25rem;
+  align-items: center;
+  position: relative;
+}
+
+.uitgelicht-product section {
   width: 50%;
-  padding: 1.5rem;
-  border: black 2px solid;
-  background: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  transform: skew(0);
-  border-radius: 20rem;
 }
 
-.merken button::before {
-  content: "";
+.uitgelicht-product section:nth-child(2) img {
+  width: 6rem;
+}
+
+.uitgelicht-product section h2 {
+  font-size: 5rem;
+}
+
+.uitgelicht-product section p {
+  font-size: 1.5rem;
+  width: 80%;
+  margin: 0.5rem 0 2rem 0;
+}
+
+.uitgelicht-product section:nth-child(3) img {
+  width: 100%;
+}
+
+
+.back-img:nth-child(1) {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 100%;
-  left: 0;
-  background: rgb(20, 20, 20);
-  opacity: 0;
-  color: #ffffff;
+  left: -35rem;
+  top: -5rem;
   z-index: -1;
-  transition: all 0.5s;
-  border-radius: 20rem;
+  height: 80rem;
+  opacity: 3%;
 }
 
-.merken button:hover span a {
+
+/* REVIEWS */
+
+
+
+.arrows {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.arrow {
+  cursor: pointer;
+  background-color: rgba(211, 211, 211, 0.608);
+  height: 6rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  padding-bottom: 2.3rem;
+  padding-left: 0.5rem;
+  justify-content: center;
+  font-size: 10rem;
+  position: relative;
+  color: #1C69D4;
+}
+
+.arrow-left {
+  border-radius: 50% 0 0 50%;
+  position: relative;
+  left: 6rem;
+  top: -30rem;
+}
+
+.arrow-right {
+  border-radius: 0 50% 50% 0;
+  position: relative;
+  right	: 6rem;
+  top: -30rem;
+
+}
+
+
+
+.reviews-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.reviews {
+  display: flex;
+  padding: 10rem 25rem;
+  height: 50rem;
+  gap: 5rem;
+  justify-content: flex-start;
+  transition: transform 0.5s ease-in-out;
+}
+
+.reviews li {
+  width: 50rem;
+  flex-shrink: 0;
+}
+
+.reviews li img {
+  width: 45rem;
+  height: 20rem;
+  object-fit: cover;
+  position: absolute;
+}
+
+.reviews li h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.reviews li h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  padding-top: 0.2rem;
+  border-top: lightgray 1px solid;
+}
+
+.reviews li div p:nth-child(4) {
+  font-size: 1.2rem;
+  border: none;
+}
+
+.text-review.hide {
+  display: none;
+}
+
+.date {
+  float: right;
+}
+
+.reviews li > div {
+  background: #ffffff;
+  box-shadow: 2px 2px rgb(0, 0, 0, 0.10);
+  position: relative;
+  width: 42rem;
+  top: 18rem;
+  right: -1.5rem;
+  padding: 1.5rem;
+  border-radius: 0rem 0rem 0rem 0rem;
+}
+
+.stars {
+  display: flex;
+  width: 100%;
+  fill: gold;
+  justify-content: flex-end;
+}
+
+.stars span {
+  font-size: 2rem;
+}
+
+
+
+.reviews li:nth-child(1) .stars span:nth-child(-n+3) {
+  font-variation-settings:
+  'FILL' 1
+}
+
+.reviews li:nth-child(2) .stars span:nth-child(-n+4) {
+  font-variation-settings:
+  'FILL' 1
+}
+
+.reviews li:nth-child(3) .stars span:nth-child(-n+2) {
+  font-variation-settings:
+  'FILL' 1
+}
+
+.reviews li:nth-child(4) .stars span:nth-child(-n+5) {
+  font-variation-settings:
+  'FILL' 1
+}
+
+.reviews li:nth-child(5) .stars span:nth-child(-n+1) {
+  font-variation-settings:
+  'FILL' 1
+}
+
+.reviews li:nth-child(6) .stars span:nth-child(-n+4) {
+  font-variation-settings:
+  'FILL' 1
+}
+
+.reviews li:nth-child(7) .stars span:nth-child(-n+2) {
+  font-variation-settings:
+  'FILL' 1
+}
+
+.reviews li:nth-child(8) .stars span:nth-child(-n+3) {
+  font-variation-settings:
+  'FILL' 1
+}
+
+.material-symbols-outlined {
+  color: rgb(227, 193, 1);
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 48,
+}
+
+.reviews li .text-review {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in;
+}
+
+.reviews li.active .text-review {
+  max-height: 100rem;
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  height: 40rem;
+  justify-content: space-between;
+  padding: 5rem 25rem;
+  background: #1C69D4;
+}
+
+footer .programmeur {
+
+}
+
+footer .programmeur h3 {
+  font-size: 2rem;
   color: #ffffff;
-  transition-delay: 100ms;
+  margin-bottom: 1rem;
 }
 
-.merken button:hover::before {
-  left: 0;
-  right: 0;
-  opacity: 1;
+footer .programmeur > p {
+  font-size: 1.5rem;
+  width: 60%;
+  margin-bottom: 2rem;
+  color: #ffffff;
 }
 
-.merken button span a {
-  color: black;
+footer .social {
+  display: flex;
 }
+
+footer .social li {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem;
+}
+
+footer .social li a {
+  display: flex;
+  align-items: center;
+}
+
+footer .social li a p {
+  display: none;
+  margin-left: 0.5rem;
+  color: #f2f2f2;
+  font-size: 1.2rem;
+}
+
+footer .social li:hover {
+  background: rgba(211, 211, 211, 0.544);
+  width: 10rem;
+}
+
+footer .social li:hover p {
+  display: flex;
+}
+
+footer .social img {
+  width: 2.5rem;
+}
+
+.nav-footer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-footer ul li {
+  width: 18rem;
+}
+
+.nav-footer h4 {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.nav-footer p {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+}
+
+
+
