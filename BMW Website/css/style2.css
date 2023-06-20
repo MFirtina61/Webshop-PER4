@@ -458,6 +458,67 @@ main .uitgelicht {
   margin-top: -8rem;
 }
 
+main .uitgelicht section {
+  position: relative;
+  top: 45rem;
+  left: 20rem;
+  color: #ffffff;
+}
+
+main .uitgelicht h1 {
+  font-size: 5rem;
+}
+
+main .uitgelicht p {
+  width: 20%;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.button-style2 {
+  background: white;
+  border: none;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem;
+  width: 30rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: skew(0);
+  border-radius: 4rem;
+}
+
+.button-style2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  color: #ffffff;
+  z-index: -1;
+  transition: all 0.5s;
+  border-radius: 1.7rem;
+}
+
+.button-style2:hover span a {
+  color: #ffffff;
+  transition-delay: 100ms;
+}
+
+.button-style2:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.button-style2 span a {
+  color: black;
+}
+
 /* BUTTON ANIMATION MENU */
 
 .menu-button {
@@ -571,18 +632,17 @@ main .uitgelicht {
 /* ------------ UITGELICHT BMW -------------- */
 
 .uitgelicht-bmw {
-  min-width: 100vh;
+  min-width: 100%;
   padding-bottom: 5rem;
   padding: 0 25rem 0 25rem;
 }
 
 .uitgelicht-bmw section .bmw-autos {
   display: flex;
-  gap: 2rem;
 }
 
 .uitgelicht-bmw section .bmw-autos li {
-  width: 100%;
+  width: 25%;
 }
 
 .uitgelicht-bmw section .bmw-autos li img:nth-child(1) {
@@ -620,7 +680,6 @@ main .uitgelicht {
   margin-top: 12rem;
   justify-content: center;
   position: relative;
-  display: none;
 }
 
 .auto-info {
@@ -635,7 +694,7 @@ main .uitgelicht {
 .auto-info li {
   background: #f2f2f2;
   height: 24rem;
-  width: 33.33%;
+  width: 100%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -848,8 +907,10 @@ main .uitgelicht {
 
 
 .reviews-container {
-  overflow: hidden;
   position: relative;
+  max-width: 100vw;
+  overflow: hidden;
+  width: 100vw;
 }
 
 .reviews {
@@ -1068,3 +1129,509 @@ footer .social img {
 
 
 
+
+
+
+
+/* ----------------- */
+/* ------BMWM2------ */
+/* ----------------- */
+
+.bmwM2 .uitgelicht {
+  background-image: url("/img/bmwM2-background.jpg");
+  position: relative;
+}
+
+.bmwM2 .uitgelicht h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  position: absolute;
+  top: -3.5rem;
+  left: 12.5rem;
+}
+
+.bmwM2 .uitgelicht div {
+  color: #ffffff;
+  display: flex;
+  position: absolute;
+  top: 48%;
+  left: 5rem;
+}
+
+.bmwM2 .uitgelicht div img {
+  width: 6rem;
+  margin-right: 2rem;
+  height: 2.5rem;
+}
+
+
+.bmwM2 .uitgelicht div p {
+  color: #ffffff;
+  font-size: 2.5rem;
+  width: 40rem;
+}
+
+.product-bmwm2 {
+  display: flex;
+  padding: 15rem 25rem;
+  gap: 5rem;
+}
+
+.product-bmwm2 section {
+  width: 100%;
+}
+
+.product-bmwm2 section img {
+  width: 100%;
+}
+
+
+.product-bmwm2 section h2 {
+  font-size: 3rem;
+}
+
+.product-bmwm2 section p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: inline;
+}
+
+.product-bmwm2 section ul{
+  list-style: inside;
+}
+
+.product-bmwm2 section ul li {
+  list-style: inside;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.product-bmwm2 section button {
+  background: none;
+  border: none;
+}
+
+.product-bmwm2 section button a {
+  color: black;
+}
+
+.product-bmwm2 section button:hover a {
+  color: white;
+  transition-delay: 0.2s;
+}
+
+
+
+.auto-details ul {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rem;
+  padding: 0 25rem;
+}
+
+.auto-details ul li {
+  width: 33%;
+  text-align: center;
+}
+
+.auto-details ul li p {
+  font-size: 2rem;
+}
+
+.auto-details ul li h3 {
+  font-size: 6rem;
+}
+
+
+
+
+.kleur-auto section {
+  justify-content: center;
+  padding: 0 25rem;
+}
+
+.kleur-auto section > img {
+  width: 100%;
+}
+
+.kleurRood {
+  cursor: pointer;
+}
+
+.kleurZwart {
+  cursor: pointer;
+}
+
+.kleurGroen {
+  cursor: pointer;
+}
+
+.kleurRood, .kleurZwart, .kleurGroen, .kleurLichtWit, .kleurGeel, .kleurDonkerBlauw, .kleurLichtGrijs, .kleurDonkerRood, .kleurMiddenGrijs, .kleurHeelDonkerRood {
+  cursor: pointer;
+  border: none;
+  width: 6rem;
+  height: 6rem;
+}
+
+.kleurGeselecteerd {
+  border: 2px solid rgb(0, 0, 0);
+  padding: 0.2rem;
+}
+
+#autoAfbeelding {
+  transition: transform 0.5s ease-in-out;
+}
+
+.kleurGeselecteerd #autoAfbeelding {
+  transform: scale(1.2);
+}
+
+.kleur-auto h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.kleur-auto section div {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* product2 */
+
+.product2-bmwm2 {
+  display: flex;
+  padding: 15rem 25rem;
+  gap: 5rem;
+  align-items: center;
+}
+
+.product2-bmwm2 section {
+  width: 50%;
+}
+
+.product2-bmwm2 section h2 {
+  font-size: 3rem
+}
+
+.product2-bmwm2 section p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.product2-bmwm2 section button {
+  background: none;
+  border: none;
+}
+
+.product2-bmwm2 section button a {
+  color: black;
+}
+
+.product2-bmwm2 section button:hover a {
+  transition-delay: 0.2s;
+  color: white;
+}
+
+
+.product2-bmwm2 section img {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+/* BMW M2 RESPONSIVE */
+
+@media screen and (max-width: 800px) {
+
+
+
+  .bmwM2 .uitgelicht {
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.565),
+      rgba(0, 0, 0, 0)
+    ),
+    url("/img/bmwM2-background.jpg");
+  }
+  
+  .bmwM2 .uitgelicht h1 {
+    top: -3.5rem;
+    left: 1.7rem;
+  }
+  
+  .bmwM2 .uitgelicht div {
+    color: #ffffff;
+    display: flex;
+    position: absolute;
+    top: 48%;
+    left: -4rem;
+  }
+  
+  .bmwM2 .uitgelicht div img {
+    width: 4rem;
+    margin: 0.5rem 1rem 0 0;
+    height: 1.5rem;
+  }
+  
+  
+  .bmwM2 .uitgelicht div p {
+    color: #ffffff;
+    font-size: 2rem;
+    width: 50%;
+  }
+
+
+
+
+
+
+  
+  .product-bmwm2 {
+    flex-wrap: wrap;
+    padding: 5rem 3rem;
+    gap: 5rem;
+  }
+
+
+
+  
+  .auto-details ul {
+    flex-wrap: wrap;
+    margin: 10rem 0;
+    padding: 0 ;
+    gap: 7rem;
+  }
+  
+  .auto-details ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+
+
+
+
+
+  .kleur-auto section {
+    justify-content: center;
+    padding: 0 3rem;
+  }
+  
+  .kleurGeselecteerd #autoAfbeelding {
+    transform: scale(1.2);
+  }
+  
+  .kleur-auto section div {
+    flex-wrap: wrap;
+  }
+  
+
+
+  .product2-bmwm2 {
+    flex-wrap: wrap;
+    padding: 5rem 3rem;
+    gap: 5rem;
+    align-items: center;
+  }
+  
+  .product2-bmwm2 section {
+    width: 100%;
+  }
+  
+
+}
+
+
+
+
+
+  @media screen and (max-width: 1500px) {
+
+   .bmw-info section h2 {
+    font-size: 3rem;
+   }
+
+  .bmw3 {
+    display: none;
+  }
+  
+  .uitgelicht-bmw section .bmw-autos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .uitgelicht-bmw section .bmw-autos li {
+    width: 50%;
+  }
+
+  .auto-info {
+    flex-wrap: wrap;
+  }
+
+  .auto-info li {
+    width: 32.7%;
+  }
+
+  .auto-info li h2 {
+    font-size: 2rem;
+  }
+}
+
+  
+@media screen and (max-width: 1200px) {
+  
+  nav {
+    display: none;
+  }
+
+  .bmw-info {
+    flex-wrap: wrap;
+  }
+
+  .merken {
+    margin-bottom: 8rem;
+  }
+
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+  .uitgelicht-bmw section .bmw-autos li {
+    width: 100%;
+  }
+
+  
+}
+
+
+
+
+  @media screen and (max-width: 800px) {
+
+    main .uitgelicht h1 {
+      font-size: 2.5rem;
+    }
+
+    .button-style2 {
+      width: 20rem;
+    }
+    
+    
+    main .uitgelicht p {
+      width: 55%;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    main .uitgelicht section {
+      position: relative;
+      top: 45rem;
+      left: 6rem;
+      color: #ffffff;
+    }
+
+    .reviews {
+      gap: 0rem;
+    }
+
+    .merken {
+      padding: 0;
+    }
+
+    .uitgelicht-bmw {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .uitgelicht-bmw ul {
+      width: 60%;
+    }
+
+    
+    .bmw-info {
+      padding: 0;
+      margin-top: 10rem;
+    }
+
+
+
+
+
+
+
+    .popup {
+      display: none;
+    }
+
+    .bmw-info section {
+      padding: 0 6rem;
+      margin-top: -5rem;
+    }
+
+    .bmw-info section:nth-child(2) {
+      margin-bottom: 8rem;
+    }
+
+    .uitgelicht-bmw section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .auto-info li {
+      width: 100%;
+    }
+
+    .auto-info li h2 {
+      font-size: 2.2rem;
+    }
+
+    .merken {
+      margin-bottom: 80rem;
+      flex-wrap: wrap;
+      margin-top: 20rem;
+    }
+
+    .merken section ul li {
+      width: 100%;
+    }
+
+    .uitgelicht-product {
+      padding: 5rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .uitgelicht-product section {
+      width: 100%;
+    }
+
+    footer {
+      max-width: 100%;
+      justify-content: center;
+      position: absolute;
+      height: 60vh;
+      gap: 5rem;
+    }
+
+    footer .social {
+      flex-wrap: wrap;
+    }
+
+    footer .social li {
+      width: 100%;
+    }
+  }
