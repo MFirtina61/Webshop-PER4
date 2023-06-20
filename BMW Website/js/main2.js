@@ -210,7 +210,7 @@ const reviewWidth = reviews[0].offsetWidth;
 const numVisibleReviews = 3;
 const maxIndex = Math.max(0, reviews.length - numVisibleReviews + 0.5);
 
-let currentIndex = 3;
+let currentIndex = 0.5;
 
 arrows.forEach((arrow) => {
   arrow.addEventListener('click', () => {
@@ -257,6 +257,28 @@ function showReviews(previousIndex, currentIndex) {
 }
 
 showReviews(0, currentIndex);
+
+
+
+
+
+
+
+
+function veranderKleur(element, nieuweAfbeelding) {
+  var autoAfbeelding = document.getElementById('autoAfbeelding');
+
+  var kleurAfbeeldingen = document.getElementsByClassName('colors1')[0].getElementsByTagName('img');
+  for (var i = 0; i < kleurAfbeeldingen.length; i++) {
+    kleurAfbeeldingen[i].classList.remove('kleurGeselecteerd');
+  }
+
+  element.classList.add('kleurGeselecteerd');
+
+  autoAfbeelding.src = nieuweAfbeelding;
+}
+
+
 
 
 
