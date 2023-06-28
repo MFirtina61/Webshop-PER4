@@ -24,7 +24,7 @@ function setNavigatieOpengeklapt() {
 }
 
 function setNavigatieNietOpengeklapt() {
-  logo.setAttribute("src", "img/BMW-logo-wit.webp");
+  logo.setAttribute("src", "img/bmw-logo-wit.webp");
   cart.setAttribute("src", "img/cart-white.webp");
   searchIcon.setAttribute("src", "img/search-wit.webp");
   navigatie.classList.remove("opengeklapt");
@@ -447,9 +447,14 @@ function updateLocalStorage() {
   setShoppingCartToLocalStorage(products);
 }
 
-// Functie om de winkelwagen te herstellen bij het laden van de pagina
 function restoreShoppingCart() {
   const shoppingCartUL = document.querySelector('.shoppingCheckout ul');
+
+  if (!shoppingCartUL) {
+    console.error('Element with class "shoppingCheckout" not found.');
+    return;
+  }
+
   const shoppingCart = getShoppingCartFromLocalStorage();
 
   shoppingCart.forEach(product => {
@@ -480,8 +485,11 @@ function restoreShoppingCart() {
   calculateTotalAmount();
 }
 
-// Winkelwagen herstellen bij het laden van de pagina
-restoreShoppingCart();
+document.addEventListener('DOMContentLoaded', () => {
+  // Winkelwagen herstellen bij het laden van de pagina
+  restoreShoppingCart();
+});
+
 
 
 

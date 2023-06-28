@@ -25,7 +25,7 @@ function setNavigatieOpengeklapt() {
 }
 
 function setNavigatieNietOpengeklapt() {
-  logo.setAttribute("src", "img/BMW-logo-wit.webp");
+  logo.setAttribute("src", "img/bmw-logo-wit.webp");
   cart.setAttribute("src", "img/cart-white.webp");
   searchIcon.setAttribute("src", "img/search-wit.webp");
   navigatie.classList.remove("opengeklapt");
@@ -108,92 +108,124 @@ hamburgerOpen.addEventListener("click", openHambugerMenu);
 
 
 
-var hamburgerSluiten = document.querySelector(".hamburger-sluiten");
+document.addEventListener("DOMContentLoaded", function() {
+  var hamburgerSluiten = document.querySelector(".hamburger-sluiten");
+  var hamburgerSluiten2 = document.querySelector(".hamburger-sluiten-2");
+  var hamburgerSluiten3 = document.querySelector(".hamburger-sluiten-3");
+  var hamburgerSluiten4 = document.querySelector(".hamburger-sluiten-4");
+
+  // Eerste menu
+  function sluitHambugerMenu() {
+    document.body.classList.remove("menuOpen");
+  }
+  if (hamburgerSluiten) {
+    hamburgerSluiten.addEventListener("click", sluitHambugerMenu);
+  }
+
+  // Tweede menu - model
+  var modellenOpenen = document.querySelector(".modellen-openen");
+
+  function openModellen() {
+    document.body.classList.add("modellenOpen");
+  }
+  if (modellenOpenen) {
+    modellenOpenen.addEventListener("click", openModellen);
+  }
+
+  // Derde menu - elektrisch
+  var elektrischOpenen = document.querySelector(".elektrisch-openen");
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+  function openElektrisch() {
+    document.body.classList.add("elektrischOpen");
+  }
+  if (elektrischOpenen) {
+    elektrischOpenen.addEventListener("click", openElektrisch);
+  }
+  });
+  // Vierde menu - Aanschaf
+  var aanschafOpenen = document.querySelector(".aanschaf-openen");
+
+  function openAanschaf() {
+    document.body.classList.add("aanschafOpen");
+  }
+  if (aanschafOpenen) {
+    aanschafOpenen.addEventListener("click", openAanschaf);
+  }
+});
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var hamburgerTerug1 = document.querySelector(".model-terug");
+  var hamburgerTerug2 = document.querySelector(".elektrisch-terug");
+  var hamburgerTerug3 = document.querySelector(".aanschaf-terug");
+
+  // Terug naar hoofdmenu - model
+  function terugHamburger1() {
+    document.body.classList.remove("modellenOpen");
+  }
+  if (hamburgerTerug1) {
+    hamburgerTerug1.addEventListener("click", terugHamburger1);
+  }
+
+  // Terug naar hoofdmenu - elektrisch
+  function terugHamburger2() {
+    document.body.classList.remove("elektrischOpen");
+  }
+  if (hamburgerTerug2) {
+    hamburgerTerug2.addEventListener("click", terugHamburger2);
+  }
+
+  // Terug naar hoofdmenu - aanschaf
+  function terugHamburger3() {
+    document.body.classList.remove("aanschafOpen");
+  }
+  if (hamburgerTerug3) {
+    hamburgerTerug3.addEventListener("click", terugHamburger3);
+  }
+});
+
+
+
+
+
+// Alle menu's sluiten
+function sluitHamburgerMenu2() {
+  document.body.classList.remove("menuOpen");
+  document.body.classList.remove("modellenOpen");
+}
+
 var hamburgerSluiten2 = document.querySelector(".hamburger-sluiten-2");
+if (hamburgerSluiten2) {
+  hamburgerSluiten2.addEventListener("click", sluitHamburgerMenu2);
+}
+
+function sluitHamburgerMenu3() {
+  document.body.classList.remove("menuOpen");
+  document.body.classList.remove("elektrischOpen");
+}
+
 var hamburgerSluiten3 = document.querySelector(".hamburger-sluiten-3");
+if (hamburgerSluiten3) {
+  hamburgerSluiten3.addEventListener("click", sluitHamburgerMenu3);
+}
+
+function sluitHamburgerMenu4() {
+  document.body.classList.remove("menuOpen");
+  document.body.classList.remove("aanschafOpen");
+}
+
 var hamburgerSluiten4 = document.querySelector(".hamburger-sluiten-4");
-
-// Eerste menu
-function sluitHambugerMenu() {
-  document.body.classList.remove("menuOpen");
+if (hamburgerSluiten4) {
+  hamburgerSluiten4.addEventListener("click", sluitHamburgerMenu4);
 }
-hamburgerSluiten.addEventListener("click", sluitHambugerMenu);
 
-// Tweede menu - model
-var modellenOpenen = document.querySelector(".modellen-openen");
-
-function openModellen() {
-  document.body.classList.add("modellenOpen");
-}
-modellenOpenen.addEventListener("click", openModellen);
-
-// Derde menu - elektrisch
-var elektrischOpenen = document.querySelector(".elektrisch-openen");
-
-function openElektrisch() {
-  document.body.classList.add("elektrischOpen");
-}
-elektrischOpenen.addEventListener("click", openElektrisch);
-
-// vierde menu - Aanschaf
-var aanschafOpenen = document.querySelector(".aanschaf-openen");
-
-function openAanschaf() {
-  document.body.classList.add("aanschafOpen");
-}
-aanschafOpenen.addEventListener("click", openAanschaf);
-
-
-
-
-
-
-var hamburgerTerug1 = document.querySelector(".model-terug");
-var hamburgerTerug2 = document.querySelector(".elektrisch-terug");
-var hamburgerTerug3 = document.querySelector(".aanschaf-terug");
-
-// Terug naar hoofd menu - model
-function terugHamburger1() {
-  document.body.classList.remove("modellenOpen");
-}
-hamburgerTerug1.addEventListener("click", terugHamburger1);
-
-// Terug naar hoofd menu - elektrisch
-function terugHamburger2() {
-  document.body.classList.remove("elektrischOpen");
-}
-hamburgerTerug2.addEventListener("click", terugHamburger2);
-
-// Terug naar hoofd menu - elektrisch
-function terugHamburger3() {
-  document.body.classList.remove("aanschafOpen");
-}
-hamburgerTerug3.addEventListener("click", terugHamburger3);
-
-
-
-
-
-
-
-// Alle menu's Sluiten
-function sluitHambugerMenu2() {
-  document.body.classList.remove("menuOpen");
-  document.body.classList.remove("modellenOpen");
-}
-hamburgerSluiten2.addEventListener("click", sluitHambugerMenu3);
-
-function sluitHambugerMenu3() {
-  document.body.classList.remove("menuOpen");
-  document.body.classList.remove("elektrischOpen");
-}
-hamburgerSluiten3.addEventListener("click", sluitHambugerMenu3);
-
-function sluitHambugerMenu4() {
-  document.body.classList.remove("menuOpen");
-  document.body.classList.remove("aanschafOpen");
-}
-hamburgerSluiten4.addEventListener("click", sluitHambugerMenu4);
 
 
 
@@ -297,22 +329,6 @@ auto2.forEach((auto) => {
 auto1.forEach((auto) => {
   auto.addEventListener("click", autoDetailShow1);
 });
-
-
-const popupButton = document.getElementById('popupButton');
-const popup = document.querySelector('.popup');
-const popupImg = document.querySelector(".popup2 div:nth-child(1) img");
-
-popupButton.addEventListener('click', () => {
-  popup.classList.toggle('visible');
-  
-  if (popup.classList.contains('visible')) {
-    popupImg.style.transform = "rotate(270deg)";
-  } else {
-    popupImg.style.transform = "rotate(90deg)";
-  }
-});
-
 
 const reviewsContainer = document.querySelector('.reviews');
 const reviews = document.querySelectorAll('.reviews li');
